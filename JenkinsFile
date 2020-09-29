@@ -5,6 +5,7 @@ def retrievePass() {
 }
 
 pipeline {
+    agent any
     stages {
         stage('Calling the cmd-script') { 
             environment {
