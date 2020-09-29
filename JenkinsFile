@@ -1,0 +1,20 @@
+def retrievePass() {
+    withCredentials([usernamePassword(credentialsId: 'tech_user', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+        return PASS
+    }
+}
+
+pipeline {
+    stages {
+        stage('Calling the cmd-script') { 
+            environment {
+                PASSWORD = retrievePass()
+            }
+            steps { 
+                script {
+                    Common.CallScript('script.bat')
+                } 
+            } 
+        }
+    }
+}
