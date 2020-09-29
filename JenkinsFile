@@ -13,7 +13,7 @@ pipeline {
             }
             steps { 
                 script {
-                    Common.CallScript('script.bat')
+                    bat returnStatus: true, script: $/script.bat/$
                 } 
             } 
         }
