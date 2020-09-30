@@ -10,7 +10,7 @@ import pathlib
 
 print ('this is python script')
 passwd = os.environ.get('PASSWORD')
-var1 = "sonar.password={}".format(passwd)
+var1 = "sonar.password={}".format(os.environ.get('PASSWORD'))
 var2 = "value1"
 var3 = "value2"
 print(var1)
