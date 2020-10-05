@@ -9,8 +9,8 @@ import sys
 import pathlib
 
 print ('this is python script')
-passwd = os.environ.get('PASSWORD')
-var1 = "sonar.password={}".format(os.environ.get('PASSWORD'))
+passwd = os.environ.get('TECH_USER_PSW')
+var1 = "sonar.password={}".format(os.environ.get('TECH_USER_PSW'))
 var2 = "value1"
 var3 = "value2"
 print(var1)
