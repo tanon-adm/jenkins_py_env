@@ -1,5 +1,5 @@
 env.TECH_USER = credentials('tech_user')
 
-stage(Calling the cmd-script) {
+stage('Calling the cmd-script') {
     bat returnStatus: true, script: $/script.bat/$
 }
