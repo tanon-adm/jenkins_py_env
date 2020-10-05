@@ -1,8 +1,14 @@
-//env.TECH_USER = credentials('tech_user')
+def retrievePass() {
+    withCredentials([usernamePassword(credentialsId: 'tech_user', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+        return PASS
+    }
+}
+//env.TECH_USER_PSW = retrievePass()
 
 stage('Calling the cmd-script') {
     node('master') {
-        withEnv(["TECH_USER = credentials('tech_user')"])
-        bat returnStatus: true, script: $/script.bat/$
+        withEnv(["TECH_USER = credentials('tech_user')"]) {
+            bat returnStatus: true, script: $/script.bat/$
+        }
     }
 }
