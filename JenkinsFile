@@ -1,15 +1,9 @@
-def retrievePass() {
-    withCredentials([usernamePassword(credentialsId: 'tech_user', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        return PASS
-    }
-}
-
 pipeline {
     agent any
     stages {
         stage('Calling the cmd-script') { 
             environment {
-                PASSWORD = retrievePass()
+                TECH_USER_PSW = credentials('tech_user')
             }
             steps { 
                 script {
