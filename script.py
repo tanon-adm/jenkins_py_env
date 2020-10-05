@@ -14,7 +14,7 @@ var1 = "sonar.password={}".format(os.environ.get('TECH_USER_PSW'))
 var2 = "value1"
 var3 = "value2"
 print(var1)
-print("""# required metadata
+fileText = """# required metadata
 sonar.projectVersion=0.x
 sonar.language=c++
 
@@ -41,4 +41,7 @@ sonar.cxx.suffixes.headers=.h,.hh,.hpp,.inl,.ice
 # So disable these suffixes explicitly, as per RBEI team's advice
 sonar.c.file.suffixes=-
 sonar.cpp.file.suffixes=-
-sonar.objc.file.suffixes=-""".format(var1, var2, var3))
+sonar.objc.file.suffixes=-""".format(var1, var2, var3)
+f = open('text.txt', 'w')
+f.write(fileText)
+f.close()
