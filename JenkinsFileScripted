@@ -2,7 +2,7 @@
 
 stage('Calling the cmd-script') {
     node('master') {
-        withEnv(['TECH_USER = credentials('tech_user')'])
+        withEnv(["TECH_USER = credentials('tech_user')"])
         bat returnStatus: true, script: $/script.bat/$
     }
 }
