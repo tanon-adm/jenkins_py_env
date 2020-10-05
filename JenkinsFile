@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Calling the cmd-script') { 
             environment {
-                TECH_USER_PSW = credentials('tech_user')
+                TECH_USER = credentials('tech_user')
             }
             steps { 
                 script {
