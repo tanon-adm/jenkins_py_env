@@ -1,5 +1,7 @@
 env.TECH_USER = credentials('tech_user')
 
 stage('Calling the cmd-script') {
-    bat returnStatus: true, script: $/script.bat/$
+    node('master') {
+        bat returnStatus: true, script: $/script.bat/$
+    }
 }
