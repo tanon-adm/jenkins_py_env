@@ -9,6 +9,6 @@ stage('Calling the cmd-script') {
     node('master') {
         bat returnStatus: true, script: $/script.bat/$
         echo STAGE_NAME
-        currentBuild.description = "new description"
+        currentBuild.description = "Failed in stage \"${STAGE_NAME}\""
     }
 }
