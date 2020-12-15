@@ -8,7 +8,7 @@ env.TECH_USER_PSW = retrievePass()
 stage('Calling the cmd-script') {
     node('master') {
         bat returnStatus: true, script: $/script.bat/$
-        echo ${STAGE_NAME}
+        echo STAGE_NAME
         currentBuild.description = "new description"
     }
 }
