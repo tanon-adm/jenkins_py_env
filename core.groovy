@@ -4,6 +4,17 @@ def Test() {
     //marker = true
 }
 
+def fail() {
+    try {
+            error("TestError")
+        }
+    } catch(e) {
+        echo "Generating NuGet packages failed: ${e}"
+        failBuild()
+        throw e
+    }
+}
+
 def failBuild() {
     currentBuild.result = 'FAILURE'
     if (firstFail) {
