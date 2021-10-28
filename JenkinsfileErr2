@@ -5,8 +5,13 @@ def Init() {
 pipeline {
     agent any
     stages {
-    catchError(stageResult: 'FAILURE') {
+    
         stage('Init') { steps { script { Init() } } }
+        
+        stage('SDK Build Windows') {
+        catchError(stageResult: 'FAILURE') {
+        
+        stages {
         
         stage('Stage 1') { 
             steps { 
@@ -55,6 +60,9 @@ pipeline {
                 } 
             } 
         }
+        }
+        }
+        }
     }
-    }
+    
 }
