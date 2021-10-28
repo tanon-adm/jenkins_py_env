@@ -22,7 +22,7 @@ pipeline {
                 catchError(stageResult: 'FAILURE') {
                     script {
                         echo 'stage 2'
-                        core.failbuild()
+                        core.failBuild()
                     } 
                 } 
             }
@@ -41,6 +41,13 @@ pipeline {
             steps { 
                 script {
                     echo 'stage 4'
+                } 
+            } 
+        }
+        stage('Stage 5') { 
+            steps { 
+                script {
+                    echo 'stage 5'
                 } 
             } 
         }
