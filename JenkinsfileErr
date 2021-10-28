@@ -8,8 +8,8 @@ pipeline {
         stage('Init') { steps { script { Init() } } }
         
         stage('Stage 1') { 
-            catchError(stageResult: 'FAILURE') {
-                steps { 
+            steps { 
+                catchError(stageResult: 'FAILURE') {
                     script {
                         echo 'stage 1'
                     
@@ -18,8 +18,8 @@ pipeline {
             }
         }
         stage('Stage 2') { 
-            catchError(stageResult: 'FAILURE') {
-                steps { 
+            steps { 
+                catchError(stageResult: 'FAILURE') {
                     script {
                         echo 'stage 2'
                         core.failbuild()
@@ -28,8 +28,8 @@ pipeline {
             }
         }
         stage('Stage 3') { 
-            catchError(stageResult: 'FAILURE') {
-                steps { 
+            steps {
+                catchError(stageResult: 'FAILURE') {
                     script {
                         echo 'stage 3'
                     
