@@ -1,4 +1,4 @@
-def firstFail = true
+firstFail = true
 
 def Test() {
     //marker = true
