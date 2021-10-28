@@ -19,12 +19,12 @@ pipeline {
         }
         stage('Stage 2') { 
             steps { 
-              //  catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     script {
                         echo 'stage 2'
                         core.fail()
                     } 
-            //    } 
+                } 
             }
         }
         stage('Stage 3') { 
