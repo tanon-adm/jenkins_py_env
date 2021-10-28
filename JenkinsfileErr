@@ -41,6 +41,7 @@ pipeline {
             steps { 
                 script {
                     echo 'stage 4'
+                    core.failBuild()
                 } 
             } 
         }
