@@ -6,8 +6,7 @@ def Test() {
 
 def fail() {
     try {
-            error("TestError")
-        }
+        error("TestError")
     } catch(e) {
         echo "Generating NuGet packages failed: ${e}"
         failBuild()
