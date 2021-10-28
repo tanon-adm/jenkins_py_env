@@ -1,0 +1,33 @@
+arker = false
+
+def Init() {
+    core = load 'core.groovy'
+}
+
+pipeline {
+    agent any
+    stages {
+        stage('Init') { steps { script { Init() } } }
+        
+        stage('Stage 1') { 
+            when {
+                expression { !(marker) }
+            }
+            steps { 
+                script {
+                    core.Test()
+                } 
+            } 
+        }
+        stage('Stage 2') { 
+            when {
+                expression { !(marker) }
+            }
+            steps { 
+                script {
+                    echo 'stage 2'
+                } 
+            } 
+        }
+    }
+}
