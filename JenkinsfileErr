@@ -41,7 +41,9 @@ pipeline {
             steps { 
                 script {
                     echo 'stage 4'
-                    error("${currentBuild.description}")
+                    if (currentBuild.result = 'FAILURE') {
+                        error("${currentBuild.description}")
+                    }
                 } 
             } 
         }
